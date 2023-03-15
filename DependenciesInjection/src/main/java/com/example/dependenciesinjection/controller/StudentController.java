@@ -1,4 +1,4 @@
-package com.example.demo.springbootapplication.controller;
+package com.example.dependenciesinjection.controller;
 
 import java.util.Date;
 import java.util.List;
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.springbootapplication.model.Student;
-import com.example.demo.springbootapplication.service.StudentService;
+import com.example.dependenciesinjection.model.Student;
+import com.example.dependenciesinjection.service.StudentService;
 
 @RestController
 @Qualifier("studentServiceImplMap")
@@ -23,7 +23,7 @@ public class StudentController {
 		super();
 		this.studentService = studentService;
 		
-		studentService.add(new Student("234", 2, "pravalika", "vemula", "India", "TDM", new Date()));
+		studentService.add(new Student("234", 1, "pravalika", "vemula", "India", "tdm", new Date()));
 	}
 
 	@GetMapping("/student/{id}")
@@ -36,5 +36,4 @@ public class StudentController {
 			System.out.println("Using map configuration");
 			return studentService.all();
 		}
-}
-
+	}

@@ -1,4 +1,4 @@
-package com.example.demo.springbootapplication;
+package com.example.dependenciesinjection;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

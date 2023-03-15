@@ -1,30 +1,25 @@
-package com.example.demo.springbootapplication.service;
+package com.example.dependenciesinjection.service;
 
 import java.util.ArrayList;
-
 import java.util.List;
 
-
-
-import com.example.demo.springbootapplication.model.Student;
-
+import com.example.dependenciesinjection.model.Student;
 
 public class StudentServiceImpl implements StudentService {
 	
 	private List<Student> studentList = new ArrayList<>();
-
+      
+	
 	@Override
 	public void add(Student student) {
 		// TODO Auto-generated method stub
 		studentList.add(student);
-
 	}
 
 	@Override
 	public void delete(Student student) {
 		// TODO Auto-generated method stub
-		studentList.remove(student);
-
+          studentList.remove(student);
 	}
 
 	@Override
@@ -35,12 +30,13 @@ public class StudentServiceImpl implements StudentService {
 
 	@Override
 	public Student findById(String id) {
-		// TODO Auto-generated method stub
-		for (Student student : studentList) {
-			return student;
-		}
-	
-		return null;
+		// TODO Auto-generated method stub\
+		 for(Student student : studentList) {
+			if(student.getIdStudent().equals(id)) {
+				return student;
+			}
+		 }
+		 return null;
 	}
-}
 
+}

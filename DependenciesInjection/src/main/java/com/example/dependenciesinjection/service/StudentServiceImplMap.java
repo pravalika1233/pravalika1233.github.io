@@ -1,4 +1,4 @@
-package com.example.demo.springbootapplication.service;
+package com.example.dependenciesinjection.service;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,13 +7,15 @@ import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
-import com.example.demo.springbootapplication.model.Student;
+import com.example.dependenciesinjection.model.Student;
+  
 @Service
 public class StudentServiceImplMap implements StudentService {
 	private Map<String, Student> students;
+
 	public StudentServiceImplMap() {
-        students = new HashMap<>();
-    }
+		students = new HashMap<>();
+	}
 
 	@Override
 	public void add(Student student) {
@@ -26,7 +28,6 @@ public class StudentServiceImplMap implements StudentService {
 	public void delete(Student student) {
 		// TODO Auto-generated method stub
 		students.remove(student.getIdStudent());
-
 
 	}
 
@@ -41,5 +42,6 @@ public class StudentServiceImplMap implements StudentService {
 		// TODO Auto-generated method stub
 		return students.get(id);
 	}
-
 }
+
+	
